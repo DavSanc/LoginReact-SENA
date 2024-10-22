@@ -14,15 +14,22 @@ function App() {
   function cambiarClave(evento) {
     setClave(evento.target.value)
     
+
   }
-  
+  function ingresar() {
+    if (usuario == 'admin' && clave == 'admin'){
+      alert('Ingresaste')
+    }else{
+      alert('Usuario o clave incorrecto')
+    }
+    
+  }
   return (
     <>
     <input type="text" name="usuario" id="usuario" value={usuario} onChange={cambiarUsuario}/> 
     <input type="password" name="clave" id="clave" value={clave} onChange={cambiarClave} />
-    <button>Ingresar</button>
-    {usuario}
-    {clave}
+    <button onClick={ingresar}>Ingresar</button>
+   
     </>
   )
 }
